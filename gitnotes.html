@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        span{font-weight: 800;}
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Git</title>
+</head>
+<body>
+    <h2>Git vs Github</h2>
+
+<button class="accordion">Git vs Github</button>
+<div class="panel">
+    <p>These terms can be confusing, especially for beginners. Git is a version control system which you 
+        can download to your computer, GitHub is a hosting & collaboration provider which hosts your Git projects. 
+        It is a web based solution allowing you to upload your Git Repositories (more on these in the next chapter) to it.</p>
+    <p>Uploading your code from your local Git environment to GitHub makes your code available to anybody who wants to 
+        contribute to your project.</p>
+
+</div>
+
+<button class="accordion">Repositories, Branches & Commits</button>
+<div class="panel">
+    <p>A Repository is the location where your code is stored, so a folder on your machine containing your project code. 
+        After turning this folder into a Git Repository (we'll learn how this works soon), 
+        Git manages the project code version history.
+    </p>
+    <p>The code is not directly stored in the Repository though. Inside our Repository we have "subfolders", so-called Branches. 
+        After we added the first code to our Repository, a default "master" Branch is created. 
+        We are not limited to one Branch though, a Repository typically contains multiple Branches. 
+        So these are Repositories and Branches, but where is our code stored?
+    </p>
+    <p>Inside our Branches! A Branch contains different versions of our code, our Commits. 
+        Each Commit is a snapshot of a specific version of the code.
+    </p>
+
+</div>
+
+<button class="accordion">GitHub Core Commands</button>
+<div class="panel">
+    <p>The Core Commands:
+    </p>
+    <ul>
+     <li><span>git remote add origin URL: </span>establishes a connection between the local Git Repository you're currently working on and the remote Repository.</li>
+     <li><span>git remote -v: </span>displays all remote Respositories your local Repository is connected to ("-v" also shows the URL of the remote Repository).</li>
+     <li><span>git push -u origin master: </span>will track changes in all files inside the Repository.</li>
+     <li><span>git clone: </span>copy or clone an entire remote Repository to your machine. Automatically creates a remote tracking Branch.</li>
+     <li><span>git push and git pull: </span>upload code to or download code from a remote Repository. Only possible after a remote tracking Branch was created.</li>
+     <li><span>git fetch: </span>updates the remote tracking Branch with the code from the remote Branch.</li>
+     <li><span>git remote rm origin: </span>removes the connection between the local Repository and the remote Repository, "origin" is the remote Repository`s name.</li>
+ </ul>
+
+</div>
+
+<button class="accordion">Commands for Git</button>
+<div class="panel">
+   <p>The Main Commands:
+   </p>
+   <ul>
+    <li><span>git init - </span>will turn our project into a project managed by Git.</li>
+    <li><span>git status - </span>provides information about the current state.</li>
+    <li><span>git add - </span>will track changes in all files inside the Repository.</li>
+    <li><span>git commit - </span>adds the latest version of the code to our Branch, -m should provide a meaningful Commit message.</li>
+</ul>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>
